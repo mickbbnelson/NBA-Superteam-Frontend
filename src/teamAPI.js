@@ -1,5 +1,5 @@
-class teamApi {
+class TeamApi {
     constructor(){
-        
+
     }
 }

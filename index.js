@@ -1,2 +1,4 @@
-const urlPort = 'http://localhost:3000';
-const playerApiCall = new playerApi(urlPort);
+const urlPort = `http://localhost:3000`;
+const playerApiCall = new PlayerApi(urlPort);
+
+playerApiCall.getPlayers()
