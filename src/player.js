@@ -1,6 +1,7 @@
 class Player {
 
     static all = [];
+    static playerContainer = document.getElementById("player-container")
 
     constructor(id, {description, name, position, team_id}){
         this.id = id;
@@ -23,5 +24,9 @@ class Player {
         </div>
         `
         return this.element
+    }
+
+    addToDom(){         //Need to call static variables on the entire class
+        Player.playerContainer.appendChild(this.renderLi())
     }
 }
