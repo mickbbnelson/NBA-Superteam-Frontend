@@ -1,5 +1,5 @@
 class TeamApi {
-    constructor(){
-
+    constructor(urlPort){
+        this.urlPort = urlPort 
     }
 }
