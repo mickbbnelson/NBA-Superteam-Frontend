@@ -18,9 +18,9 @@ class Player {
     renderLi(){         //No need to pass an argument through
         this.element.innerHTML = `
         <div data-id="${this.id}">
-        <h3 class="name">${this.name}</h3>
-        <h4 class="position">${this.position}</h4>
-        <p class="description">${this.description}</p>
+        <h3 class="pname">${this.name}</h3>
+        <h4 class="pposition">${this.position}</h4>
+        <p class="pdescription">${this.description}</p>
         </div>
         `
         return this.element

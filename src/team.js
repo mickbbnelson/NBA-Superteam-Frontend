@@ -11,4 +11,15 @@ class Team {
         this.element.id = `team-${id}`
         Team.all.push(this)
     }
+
+    renderLi(){    
+        this.element.innerHTML = `
+        <div data-id="${this.id}">
+        <h3 class="tname">${this.name}</h3>
+        <h4 class="tposition">${this.position}</h4>
+        <p class="tdescription">${this.description}</p>
+        </div>
+        `
+        return this.element
+    }
 }
