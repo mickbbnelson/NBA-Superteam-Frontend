@@ -1,6 +1,7 @@
 class Team {
 
     static all = [];
+    static teamContainer = document.getElementById("team-container")
 
     constructor(id, name, players){
         this.id = id;
@@ -12,14 +13,17 @@ class Team {
         Team.all.push(this)
     }
 
-    renderLi(){    
+    renderTeamLi(){    
         this.element.innerHTML = `
         <div data-id="${this.id}">
         <h3 class="tname">${this.name}</h3>
-        <h4 class="tposition">${this.position}</h4>
-        <p class="tdescription">${this.description}</p>
+        <h4 class="tplayer">${this.players}</h4>
         </div>
         `
         return this.element
+    }
+
+    addTeamToDom(){
+        Team.teamContainer.appendChild(this.renderTeamLi())
     }
 }

@@ -15,7 +15,7 @@ class Player {
         Player.all.push(this)
     }
 
-    renderLi(){         //No need to pass an argument through
+    renderPlayerLi(){         //No need to pass an argument through
         this.element.innerHTML = `
         <div data-id="${this.id}">
         <h3 class="pname">${this.name}</h3>
@@ -26,7 +26,7 @@ class Player {
         return this.element
     }
 
-    addToDom(){         //Need to call static variables on the entire class
-        Player.playerContainer.appendChild(this.renderLi())
+    addPlayerToDom(){         //Need to call static variables on the entire class
+        Player.playerContainer.appendChild(this.renderPlayerLi())
     }
 }

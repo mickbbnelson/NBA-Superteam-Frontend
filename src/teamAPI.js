@@ -8,9 +8,10 @@ class TeamApi {
         .then(r => r.json())
         .then(data => {
             const teamsData = data.data
+            debugger
             for(const team of teamsData){
                 let newTeam = new Team(team.id, team.attributes.name, team.relationships.players)
-                newPlayer.addToDOM()
+                newTeam.addTeamToDom()
             }
         })
         .catch

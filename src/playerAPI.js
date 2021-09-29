@@ -10,7 +10,7 @@ class PlayerApi {
             const playersData = data.data;
             for(const player of playersData){
             let newPlayer = new Player(player.id, player.attributes)
-            newPlayer.addToDom()
+            newPlayer.addPlayerToDom()
         }
     })
     .catch
