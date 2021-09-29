@@ -3,5 +3,6 @@ class Team {
         this.id = id;
         this.name = name;
         this.players = players;
+
     }
 }

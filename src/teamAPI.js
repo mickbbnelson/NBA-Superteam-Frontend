@@ -7,8 +7,12 @@ class TeamApi {
         fetch(this.urlPort + `/teams`)
         .then(r => r.json())
         .then(data => {
-            const teamData = data.data
-            debugger
+            const teamsData = data.data
+            for(const team of teamsData){
+                let newTeam = new Team(team.id, team.attributes.name, team.relationships.players)
+                newPlayer.addToDOM()
+            }
         })
+        .catch
     }
 }
