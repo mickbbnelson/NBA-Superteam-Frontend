@@ -6,6 +6,10 @@ class PlayerApi {
     getPlayers(){
         fetch(this.urlPort + `/players`)
         .then(r => r.json())
-        .then(data => console.log(data))
+        .then(data => {
+            const playersData = data.data;
+            for(const player of playersData)
+            let newPlayer = new Player(player.attributes)
+        })
     }
 }
