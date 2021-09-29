@@ -6,6 +6,9 @@ class TeamApi {
     getTeams(){
         fetch(this.urlPort + `/teams`)
         .then(r => r.json())
-        .then(data => console.log(data))
+        .then(data => {
+            const teamData = data.data
+            debugger
+        })
     }
 }
