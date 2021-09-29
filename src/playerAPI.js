@@ -8,8 +8,11 @@ class PlayerApi {
         .then(r => r.json())
         .then(data => {
             const playersData = data.data;
-            for(const player of playersData)
-            let newPlayer = new Player(player.attributes)
-        })
+            for(const player of playersData){
+            let newPlayer = new Player(player.id, player.attributes)
+            newPlayer.addToDom()
+        }
+    })
+    .catch
     }
 }
