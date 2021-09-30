@@ -27,5 +27,4 @@ class Team {
         Team.teamContainer.appendChild(this.renderTeamLi())
     }
 
-
 }
