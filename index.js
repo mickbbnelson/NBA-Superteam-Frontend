@@ -4,7 +4,7 @@ const teamApiCall = new TeamApi(urlPort);
 const form = document.getElementById("team-form")
 const nameValue = document.getElementById("team-name")
 
-//playerApiCall.getPlayers()
+playerApiCall.getPlayers()
 
 teamApiCall.getTeams()
 
