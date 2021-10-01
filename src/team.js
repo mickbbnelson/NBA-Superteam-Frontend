@@ -3,7 +3,7 @@ class Team {
     static all = [];
     static teamContainer = document.getElementById("team-list")
 
-    constructor(id, name, roster){
+    constructor({id, name, roster}){
         this.id = id;
         this.name = name;
         if(roster == undefined){
