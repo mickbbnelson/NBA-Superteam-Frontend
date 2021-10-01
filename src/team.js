@@ -22,6 +22,8 @@ class Team {
         <div data-id="${this.id}">
         <h3 class="tname">${this.name}</h3>
         <p class="troster">${this.roster.map(player => player.name)}</p>
+        <button class="view-team" data-id=${this.id}>View Team Details</button>
+        <button class="delete-team" data-id=${this.id}>Delete Team</button>
         </div>
         `
         return this.element
