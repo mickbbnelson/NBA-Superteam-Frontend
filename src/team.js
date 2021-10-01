@@ -6,18 +6,22 @@ class Team {
     constructor(id, name, roster){
         this.id = id;
         this.name = name;
-        this.roster = roster;
+        if(roster == undefined){
+            this.roster = []
+        }else{
+            this.roster = roster
+        }
         this.element = document.createElement('li');
         this.element.dataset['id'] = id;        
         this.element.id = `team-${id}`
         Team.all.push(this)
     }
-
+    
     renderTeamLi(){    
         this.element.innerHTML = `
         <div data-id="${this.id}">
         <h3 class="tname">${this.name}</h3>
-        <h4 class="troster">${this.roster.map(player => player.name)}</h4>
+        <p class="troster">${this.roster.map(player => player.name)}</p>
         </div>
         `
         return this.element
@@ -26,5 +30,4 @@ class Team {
     addTeamToDom(){
         Team.teamContainer.appendChild(this.renderTeamLi())
     }
-
 }

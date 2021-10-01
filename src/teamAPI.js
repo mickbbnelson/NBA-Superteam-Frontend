@@ -22,7 +22,7 @@ class TeamApi {
                 name: nameValue.value
             }
         }
-        const configObj = {
+        const configObject = {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
@@ -30,7 +30,7 @@ class TeamApi {
             },
             body: JSON.stringify(teamInfo)
         }
-        fetch(this.urlPort + `/teams`)
+        fetch(this.urlPort + `/teams`, configObject)
         .then(r => r.json())
         .then(data => {
             const newTeam = new Team(data)
