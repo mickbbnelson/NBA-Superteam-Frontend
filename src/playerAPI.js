@@ -15,4 +15,26 @@ class PlayerApi {
     })
     .catch
     }
+
+    createPlayer(){
+        let playerInfo = {
+            player: {
+                player: playerNameValue.value,
+                position: playerPositionValue.value,
+                description: playerDescriptionValue.value,
+                team_id: teamDropdown.value
+            }
+        }
+        const configObject = {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(playerInfo)
+        }
+        fetch(this.urlPort + `/players`, configObject)
+        .then(r => r.json())
+        .then(data => console.log(data))
+    }
 }

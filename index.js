@@ -20,9 +20,9 @@ function handleTeamSubmit(event){
     teamApiCall.createTeam()
 }
 
-//playerForm.addEventListener('submit', handlePlayerSubmit)
+playerForm.addEventListener('submit', handlePlayerSubmit)
 
-//function handlePlayerSubmit(event){
-//    event.preventDefault()
-//    playerApiCall
-//}
+function handlePlayerSubmit(event){
+    event.preventDefault()
+    playerApiCall.createPlayer()
+}
