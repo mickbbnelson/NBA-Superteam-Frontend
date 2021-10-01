@@ -3,7 +3,7 @@ class Player {
     static all = [];
     static playerList = document.getElementById("player-list")
 
-    constructor(id, {description, name, position, team_id}){
+    constructor({id, description, name, position, team_id}){
         this.id = id;
         this.description = description;
         this.name = name;

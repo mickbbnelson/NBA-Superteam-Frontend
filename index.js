@@ -13,9 +13,16 @@ playerApiCall.getPlayers()
 
 teamApiCall.getTeams()
 
-teamForm.addEventListener('submit', handleSubmit)
+teamForm.addEventListener('submit', handleTeamSubmit)
 
-function handleSubmit(event){
+function handleTeamSubmit(event){
     event.preventDefault()
     teamApiCall.createTeam()
 }
+
+//playerForm.addEventListener('submit', handlePlayerSubmit)
+
+//function handlePlayerSubmit(event){
+//    event.preventDefault()
+//    playerApiCall
+//}

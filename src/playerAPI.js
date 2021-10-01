@@ -9,7 +9,7 @@ class PlayerApi {
         .then(data => {
             const playersData = data.data;
             for(const player of playersData){
-            let newPlayer = new Player(player.id, player.attributes)
+            let newPlayer = new Player({id: player.id, ...player.attributes})
             newPlayer.addPlayerToDom()
         }
     })
