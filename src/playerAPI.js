@@ -19,7 +19,7 @@ class PlayerApi {
     createPlayer(){
         let playerInfo = {
             player: {
-                player: playerNameValue.value,
+                name: playerNameValue.value,
                 position: playerPositionValue.value,
                 description: playerDescriptionValue.value,
                 team_id: teamDropdown.value
@@ -35,6 +35,9 @@ class PlayerApi {
         }
         fetch(this.urlPort + `/players`, configObject)
         .then(r => r.json())
-        .then(data => console.log(data))
+        .then(data => {
+            const newPlayer = new Player(data)
+            newPlayer.addPlayerToDom()
+        })
     }
 }
