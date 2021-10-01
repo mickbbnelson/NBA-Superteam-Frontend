@@ -10,6 +10,7 @@ class TeamApi {
             const teamsData = data.data
             for(const team of teamsData){
                 const newTeam = new Team({id: team.id, ...team.attributes})
+                newTeam.addTeamsToDropdown()
                 newTeam.addTeamToDom()
             }
         })

@@ -32,4 +32,11 @@ class Team {
     addTeamToDom(){
         Team.teamContainer.appendChild(this.renderTeamLi())
     }
+
+    addTeamsToDropdown(){
+        const option = document.createElement('option');
+        option.value = this.id;
+        option.innerText = this.name;
+        teamDropdown.appendChild(option);
+    }
 }
