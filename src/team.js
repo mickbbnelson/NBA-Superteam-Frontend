@@ -39,4 +39,5 @@ class Team {
         option.innerText = this.name;
         teamDropdown.appendChild(option);
     }
+
 }

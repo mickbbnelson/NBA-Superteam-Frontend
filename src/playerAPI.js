@@ -40,4 +40,10 @@ class PlayerApi {
             newPlayer.addPlayerToDom()
         })
     }
+
+    //rerenderRoster(){
+    //    set variable to correct team element
+    //    push the new player into the roster array
+    //    adjust the innerHTML of the roster UL by mapping through the roster again
+    //}
 }

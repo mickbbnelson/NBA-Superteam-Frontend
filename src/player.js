@@ -30,4 +30,5 @@ class Player {
         Player.playerList.appendChild(this.renderPlayerLi())
     }
 
+
 }

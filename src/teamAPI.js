@@ -38,4 +38,7 @@ class TeamApi {
             newTeam.addTeamToDom()
         })
     }
+
+
+
 }
