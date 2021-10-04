@@ -33,8 +33,7 @@ class Player {
     }
 
     handlePlayerClick(event){
-        debugger
-        teamApiCall.deleteTeam(event)
+        playerApiCall.deletePlayer(event)
     }
 
 }

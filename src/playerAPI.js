@@ -41,6 +41,17 @@ class PlayerApi {
         })
     }
 
+    deletePlayer(event){
+
+        event.preventDefault()
+        const id = event.target.dataset.id
+        event.target.parentElement.remove()
+        const configObject = {method: 'DELETE'}
+        fetch(this.urlPort + `/players/${id}`, configObject)
+        .then(r => r.json())
+        .then(data => alert(data.message))
+    }
+
     //rerenderRoster(){
     //    set variable to correct team element
     //    push the new player into the roster array
