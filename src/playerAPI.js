@@ -38,6 +38,11 @@ class PlayerApi {
         .then(data => {
             const newPlayer = new Player(data)
             newPlayer.addPlayerToDom()
+            const TeamLi = document.getElementById(`team-${newPlayer.team_id}`)
+            const rosterLi = document.createElement('li')
+            rosterLi.id = newPlayer.id
+            rosterLi.innerText = newPlayer.name
+            TeamLi.children[0].children[1].appendChild(rosterLi)
         })
     }
 

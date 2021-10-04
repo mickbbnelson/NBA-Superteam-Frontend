@@ -36,4 +36,6 @@ class Player {
         playerApiCall.deletePlayer(event)
     }
 
+
+
 }
