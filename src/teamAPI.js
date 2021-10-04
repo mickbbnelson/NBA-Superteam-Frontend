@@ -42,11 +42,20 @@ class TeamApi {
     deleteTeam(event){
         event.preventDefault()
         const id = event.target.dataset.id
+        //const playersToDelete = event.target.parentElement.children[1].children
+        Player.all.map(function(player) {
+            if (player.team_id == id) {
+                const li = document.getElementById(`player-${player.id}`)
+                li.remove()
+            }})
         event.target.parentElement.remove()
+        
         const configObject = {method: 'DELETE'}
         fetch(this.urlPort + `/teams/${id}`, configObject)
         .then(r => r.json())
         .then(data => alert(data.message))
     }
+
+
 
 }

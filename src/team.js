@@ -22,7 +22,8 @@ class Team {
         this.element.innerHTML = `
         <div data-id="${this.id}">
         <h3 class="tname">${this.name}</h3>
-        <p class="troster">${this.roster.map(player => player.name)}</p>
+        <ul class="troster">${this.roster.map(player => `<li id=${player.id}>${player.name}</li>`)}
+        </ul>
         <button class="view-team" data-id=${this.id}>View Team Details</button>
         <button class="delete-team" data-id=${this.id}>Delete Team</button>
         </div>
@@ -43,6 +44,7 @@ class Team {
 
     handleTeamClick(event){
         teamApiCall.deleteTeam(event)
+        
     }
 
 }
