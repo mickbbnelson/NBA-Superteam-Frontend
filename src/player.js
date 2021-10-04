@@ -12,7 +12,7 @@ class Player {
         this.element = document.createElement('li');
         this.element.dataset['id'] = id;        //specific identifyer for each li element based on their id
         this.element.id = `player-${id}`
-        this.element.addEventListener('click', this.handleClick)
+        this.element.addEventListener('click', this.handlePlayerClick)
         Player.all.push(this)
     }
 
@@ -32,7 +32,8 @@ class Player {
         Player.playerList.appendChild(this.renderPlayerLi())
     }
 
-    handleClick(event){
+    handlePlayerClick(event){
+        debugger
         teamApiCall.deleteTeam(event)
     }
 
