@@ -12,6 +12,7 @@ class Player {
         this.element = document.createElement('li');
         this.element.dataset['id'] = id;        //specific identifyer for each li element based on their id
         this.element.id = `player-${id}`
+        this.element.addEventListener('click', this.handleClick)
         Player.all.push(this)
     }
 
@@ -21,6 +22,7 @@ class Player {
         <h3 class="pname">${this.name}</h3>
         <h4 class="pposition">${this.position}</h4>
         <p class="pdescription">${this.description}</p>
+        <button class="delete-player" data-id=${this.id}>Delete Player</button>
         </div>
         `
         return this.element
@@ -30,5 +32,8 @@ class Player {
         Player.playerList.appendChild(this.renderPlayerLi())
     }
 
+    handleClick(event){
+        teamApiCall.deleteTeam(event)
+    }
 
 }

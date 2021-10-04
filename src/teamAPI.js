@@ -40,19 +40,13 @@ class TeamApi {
     }
 
     deleteTeam(event){
+        event.preventDefault()
         const id = event.target.dataset.id
-        event.target.parantElement.remove()
-        //const configObject = {
-        //    method: 'DELETE',
-        //    headers: {
-        //        "Content-Type": "application/json",
-        //        Accept: "application/json"
-        //    },
-        //    body: JSON.stringify(teamInfo)
-        //}
+        event.target.parentElement.remove()
+        const configObject = {method: 'DELETE'}
         fetch(this.urlPort + `/teams/${id}`, configObject)
         .then(r => r.json())
-        .then(data => )
+        .then(data => alert(data.message))
     }
 
 }
