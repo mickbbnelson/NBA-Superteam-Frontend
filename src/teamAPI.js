@@ -36,6 +36,10 @@ class TeamApi {
         .then(data => {
             const newTeam = new Team(data)
             newTeam.addTeamToDom()
+            const newOption = document.createElement('option')
+            newOption.value = newTeam.id
+            newOption.innerText = newTeam.name
+            teamDropdown.appendChild(newOption)
         })
     }
 

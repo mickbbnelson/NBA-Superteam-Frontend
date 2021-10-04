@@ -44,7 +44,6 @@ class Team {
 
     handleTeamClick(event){
         teamApiCall.deleteTeam(event)
-        
     }
 
 }

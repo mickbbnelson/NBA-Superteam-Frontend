@@ -56,10 +56,4 @@ class PlayerApi {
         .then(r => r.json())
         .then(data => alert(data.message))
     }
-
-    //rerenderRoster(){
-    //    set variable to correct team element
-    //    push the new player into the roster array
-    //    adjust the innerHTML of the roster UL by mapping through the roster again
-    //}
 }
