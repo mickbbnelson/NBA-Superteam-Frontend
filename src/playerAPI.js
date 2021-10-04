@@ -50,7 +50,7 @@ class PlayerApi {
 
         event.preventDefault()
         const id = event.target.dataset.id
-        event.target.parentElement.remove()
+        event.target.parentElement.parentElement.remove()
         const configObject = {method: 'DELETE'}
         fetch(this.urlPort + `/players/${id}`, configObject)
         .then(r => r.json())
