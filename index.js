@@ -26,7 +26,3 @@ function handlePlayerSubmit(event){
     event.preventDefault()
     playerApiCall.createPlayer()
 }
-
-function handleClick(event){
-    teamApiCall.deleteTeam(event)
-}

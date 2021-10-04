@@ -14,6 +14,7 @@ class Team {
         this.element = document.createElement('li');
         this.element.dataset['id'] = id;        
         this.element.id = `team-${id}`
+        this.element.addEventListener('click', this.handleClick)  //Automatically sets an event listener on each li element.
         Team.all.push(this)
     }
     
@@ -38,6 +39,11 @@ class Team {
         option.value = this.id;
         option.innerText = this.name;
         teamDropdown.appendChild(option);
+    }
+
+    handleClick(event){
+        debugger
+        teamApiCall.deleteTeam(event)
     }
 
 }

@@ -39,6 +39,8 @@ class TeamApi {
         })
     }
 
-
+    deleteTeam(event){
+        
+    }
 
 }
