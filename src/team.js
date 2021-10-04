@@ -42,7 +42,6 @@ class Team {
     }
 
     handleClick(event){
-        debugger
         teamApiCall.deleteTeam(event)
     }
 
