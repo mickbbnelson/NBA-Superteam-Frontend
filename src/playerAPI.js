@@ -40,7 +40,7 @@ class PlayerApi {
             newPlayer.addPlayerToDom()
             const TeamLi = document.getElementById(`team-${newPlayer.team_id}`)
             const rosterLi = document.createElement('li')
-            rosterLi.id = newPlayer.id
+            rosterLi.id = `roster-${newPlayer.id}`
             rosterLi.innerText = newPlayer.name
             TeamLi.children[0].children[1].appendChild(rosterLi)
         })
@@ -50,6 +50,8 @@ class PlayerApi {
         event.preventDefault()
         const id = event.target.dataset.id
         event.target.parentElement.parentElement.remove()
+        const rosterLi = document.getElementById(`roster-${id}`)
+        rosterLi.remove()
         const configObject = {method: 'DELETE'}
         fetch(this.urlPort + `/players/${id}`, configObject)
         .then(r => r.json())
