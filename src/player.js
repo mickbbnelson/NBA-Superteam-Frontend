@@ -32,7 +32,9 @@ class Player {
     }
 
     handlePlayerClick(event){
+        if (event.target.innerText === "Delete Player"){
         playerApiCall.deletePlayer(event)
+        }
     }
 
 

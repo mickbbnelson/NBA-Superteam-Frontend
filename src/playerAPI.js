@@ -47,7 +47,6 @@ class PlayerApi {
     }
 
     deletePlayer(event){
-
         event.preventDefault()
         const id = event.target.dataset.id
         event.target.parentElement.parentElement.remove()
