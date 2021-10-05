@@ -19,8 +19,7 @@ class Player {
     renderPlayerLi(){ //No need to pass an argument through
         this.element.innerHTML = `
         <div data-id="${this.id}">
-        <h3 class="pname">${this.name}</h3>
-        <h4 class="pposition">${this.position}</h4>
+        <h3 class="pname-position">${this.name}: ${this.position}</h3>
         <p class="pdescription">${this.description}</p>
         <button class="delete-player" data-id=${this.id}>Delete Player</button>
         </div>
