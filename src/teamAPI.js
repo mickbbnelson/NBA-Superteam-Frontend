@@ -37,6 +37,7 @@ class TeamApi {
             const newTeam = new Team(data)
             newTeam.addTeamToDom()
             const newOption = document.createElement('option')
+            newOption.id = `option-${newTeam.id}`
             newOption.value = newTeam.id
             newOption.innerText = newTeam.name
             teamDropdown.appendChild(newOption)
@@ -46,14 +47,14 @@ class TeamApi {
     deleteTeam(event){
         event.preventDefault()
         const id = event.target.dataset.id
-        //const playersToDelete = event.target.parentElement.children[1].children
+        const optionRemove = document.getElementById(`option-${id}`)
+        optionRemove.remove()
         Player.all.map(function(player) {
             if (player.team_id == id) {
                 const li = document.getElementById(`player-${player.id}`)
                 li.remove()
             }})
-        event.target.parentElement.remove()
-        
+        event.target.parentElement.parentElement.remove()
         const configObject = {method: 'DELETE'}
         fetch(this.urlPort + `/teams/${id}`, configObject)
         .then(r => r.json())

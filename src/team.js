@@ -37,6 +37,7 @@ class Team {
 
     addTeamsToDropdown(){
         const option = document.createElement('option');
+        option.id = `option-${this.id}`
         option.value = this.id;
         option.innerText = this.name;
         teamDropdown.appendChild(option);
