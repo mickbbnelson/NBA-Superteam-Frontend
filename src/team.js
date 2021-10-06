@@ -30,6 +30,7 @@ class Team {
         const ul = this.element.querySelector(".troster")
         this.roster.forEach(player => {
             const li = document.createElement("li")
+            li.id = `roster-${player.id}`
             li.innerHTML =`${player.name} - ${player.position}: ${player.description}`
             ul.appendChild(li)
         })

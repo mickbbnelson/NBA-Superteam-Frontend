@@ -60,7 +60,4 @@ class TeamApi {
         .then(r => r.json())
         .then(data => alert(data.message))
     }
-
-
-
 }
