@@ -58,3 +58,19 @@ h1 {
 ul {
     list-style-type: none
 }
+
+#player-name {
+    margin: 3px auto;
+}
+
+#player-position {
+    margin: 3px auto;  
+}
+
+#player-description {
+    margin: 3px auto;
+}
+
+#dropdown {
+    margin: 3px auto;
+}
