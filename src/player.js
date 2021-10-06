@@ -17,16 +17,18 @@ class Player {
     }
 
     renderPlayerLi(){ 
+        const teamId = this.team_id
+        const pickTeam = Team.all.find(function(t) {return t.id == teamId})
         this.element.innerHTML = `
         <div data-id="${this.id}">
-        <h3 class="pname-position">Pick ${this.id}: ${this.name}
+        <h3 class="pname-position">Pick ${this.id} made by ${pickTeam.name}: ${this.name}
         <button class="delete-player" data-id=${this.id}>Delete Player</button></h3>
         </div>
         `
         return this.element
     }
 
-    addPlayerToDom(){         //Need to call static variables on the entire class
+    addPlayerToDom(){        
         Player.playerList.appendChild(this.renderPlayerLi())
     }
 
