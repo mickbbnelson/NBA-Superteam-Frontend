@@ -22,8 +22,8 @@ class Team {
         this.element.innerHTML = `
         <div data-id="${this.id}">
         <h3 class="tname">${this.name}</h3>
-        <ul class="troster">${this.roster.map(player => `<li id=roster-${player.id}>${player.name}</li>`)}
-        </ul>
+        <ul class="troster">${this.roster.map(player => `<li id=roster-${player.id}>${player.name} - ${player.position}: ${player.description}</li>`)}
+        </ul><br>
         <button class="delete-team" data-id=${this.id}>Delete Team</button>
         </div>
         `
