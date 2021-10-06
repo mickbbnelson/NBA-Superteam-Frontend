@@ -14,7 +14,7 @@ class Team {
         this.element = document.createElement('li');
         this.element.dataset['id'] = id;        
         this.element.id = `team-${id}`
-        this.element.addEventListener('click', this.handleTeamClick)  //Automatically sets an event listener on each li element.
+        this.element.addEventListener('click', this.handleTeamClick)
         Team.all.push(this)
     }
     
@@ -22,11 +22,17 @@ class Team {
         this.element.innerHTML = `
         <div data-id="${this.id}" class="team-roster">
         <h3 class="tname">${this.name}</h3>
-        <ul class="troster">${this.roster.map(player => `<li id=roster-${player.id}>${player.name} - ${player.position}: ${player.description}</li>`)}
+        <ul class="troster">
         </ul><br>
         <button class="delete-team" data-id=${this.id}>Delete Team</button>
         </div>
         `
+        const ul = this.element.querySelector(".troster")
+        this.roster.forEach(player => {
+            const li = document.createElement("li")
+            li.innerHTML =`${player.name} - ${player.position}: ${player.description}`
+            ul.appendChild(li)
+        })
         return this.element
     }
 
