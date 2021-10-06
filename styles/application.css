@@ -45,3 +45,16 @@ body {
     padding: 1%; 
     width: 45%; 
 }
+
+.team-roster {
+   border-style: solid; 
+   padding: 1%; 
+}
+
+h1 {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none
+}

@@ -41,7 +41,7 @@ class PlayerApi {
             const TeamLi = document.getElementById(`team-${newPlayer.team_id}`)
             const rosterLi = document.createElement('li')
             rosterLi.id = `roster-${newPlayer.id}`
-            rosterLi.innerText = newPlayer.name
+            rosterLi.innerText = `${newPlayer.name} - ${newPlayer.position}: ${newPlayer.description}`
             TeamLi.children[0].children[1].appendChild(rosterLi)
         })
     }
