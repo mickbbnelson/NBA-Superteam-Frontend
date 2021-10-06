@@ -8,20 +8,19 @@ class Player {
         this.description = description;
         this.name = name;
         this.position = position;
-        this.team_id = team_id; // Need to create elements based on this object
+        this.team_id = team_id; 
         this.element = document.createElement('li');
-        this.element.dataset['id'] = id;        //specific identifyer for each li element based on their id
+        this.element.dataset['id'] = id;        
         this.element.id = `player-${id}`
         this.element.addEventListener('click', this.handlePlayerClick)
         Player.all.push(this)
     }
 
-    renderPlayerLi(){ //No need to pass an argument through
+    renderPlayerLi(){ 
         this.element.innerHTML = `
         <div data-id="${this.id}">
-        <h3 class="pname-position">${this.name}: ${this.position}</h3>
-        <p class="pdescription">${this.description}</p>
-        <button class="delete-player" data-id=${this.id}>Delete Player</button>
+        <h3 class="pname-position">Pick ${this.id}: ${this.name}
+        <button class="delete-player" data-id=${this.id}>Delete Player</button></h3>
         </div>
         `
         return this.element

@@ -49,7 +49,7 @@ class PlayerApi {
     deletePlayer(event){
         event.preventDefault()
         const id = event.target.dataset.id
-        event.target.parentElement.parentElement.remove()
+        event.target.parentElement.parentElement.parentElement.remove()
         const rosterLi = document.getElementById(`roster-${id}`)
         rosterLi.remove()
         const configObject = {method: 'DELETE'}
