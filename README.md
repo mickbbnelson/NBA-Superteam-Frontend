@@ -12,10 +12,10 @@ Running the Application:
 -In the frontend directory type "open index.html" to open the application in the browser
 
 Contributing
-Bug reports and pull requests are welcome on GitHub at https://https://github.com/mickbbnelson/. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/mickbbnelson/NBA-Superteam-Frontend. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
 
 License
 The gem is available as open source under the terms of the MIT License.
 
 Code of Conduct
-Everyone interacting with the Sinatra Hiking App project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
+Everyone interacting with the NBA-Superteam-Frontend project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
