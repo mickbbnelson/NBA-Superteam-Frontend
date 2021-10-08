@@ -13,7 +13,7 @@ class PlayerApi {
             newPlayer.addPlayerToDom()
         }
     })
-    .catch
+    .catch(error => console.log('Error'))
     }
 
     createPlayer(){

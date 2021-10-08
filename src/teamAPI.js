@@ -7,6 +7,7 @@ class TeamApi {
         fetch(this.urlPort + `/teams`)
         .then(r => r.json())
         .then(data => {
+            console.log(data)
             const teamsData = data.data
             for(const team of teamsData){
                 const newTeam = new Team({id: team.id, ...team.attributes})
@@ -14,7 +15,7 @@ class TeamApi {
                 newTeam.addTeamToDom()
             }
         })
-        .catch
+        .catch(error => console.log('Error'))
     }
 
     createTeam(){
@@ -45,7 +46,6 @@ class TeamApi {
     }
 
     deleteTeam(event){
-        event.preventDefault()
         const id = event.target.dataset.id
         const optionRemove = document.getElementById(`option-${id}`)
         optionRemove.remove()
