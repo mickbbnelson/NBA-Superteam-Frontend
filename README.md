@@ -12,7 +12,7 @@ Running the Application:
 -In the frontend directory type "open index.html" to open the application in the browser
 
 Contributing
-Bug reports and pull requests are welcome on GitHub at https://https://github.com/mickbbnelson/Hike-San-Juan-Islands. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://https://github.com/mickbbnelson/. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
 
 License
 The gem is available as open source under the terms of the MIT License.
