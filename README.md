@@ -7,6 +7,7 @@ Installation:
 In order to install correctly, you must install the backend first please follow this link: https://github.com/mickbbnelson/NBA-Superteam-Backend.
 
 Running the Application:
+
 -In the backend directory run the backend server by typing "rails s" into the terminal 
 
 -In the frontend directory type "open index.html" to open the application in the browser
