@@ -62,7 +62,12 @@ class PlayerApi {
         rosterLi.remove();
         const configObject = {method: 'DELETE'};
         fetch(this.urlPort + `/players/${id}`, configObject)
-        .then(r => r.json())
+        .then(r => {
+            if (!r.ok) {
+                throw Error('HTTP Error/Could not delete player')
+            } else {
+            return r.json()}})
         .then(data => alert(data.message))
+        .catch(error => console.log(error.message))
     }
 }
