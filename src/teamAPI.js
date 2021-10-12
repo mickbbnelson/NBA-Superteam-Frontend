@@ -5,7 +5,11 @@ class TeamApi {
 
     getTeams(){
         fetch(this.urlPort + `/teams`)
-        .then(r => r.json())
+        .then(r => {
+            if (!r.ok) {
+                throw Error('HTTP Error/Could not fetch data resource')
+            } else {
+            return r.json()}})
         .then(data => {
             const teamsData = data.data;
             for(const team of teamsData){
@@ -14,7 +18,7 @@ class TeamApi {
                 newTeam.addTeamToDom();
             }
         })
-        .catch(error => console.log('Error'))
+        .catch(error => console.log(error.message))
     }
 
     createTeam(){
