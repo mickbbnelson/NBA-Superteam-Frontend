@@ -32,11 +32,7 @@ class TeamApi {
             body: JSON.stringify(teamInfo)
         }
         fetch(this.urlPort + `/teams`, configObject)
-        .then(r => {
-            if (!r.ok) {
-                throw Error('HTTP Error/Could not create team')
-            } else {
-            return r.json()}})
+        .then(r => this.renderJSON(r))
         .then(data => {
             const newTeam = new Team(data);
             newTeam.addTeamToDom();

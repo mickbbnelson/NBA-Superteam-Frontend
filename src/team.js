@@ -18,7 +18,7 @@ class Team {
         Team.all.push(this)
     }
     
-    renderTeamLi(){    
+    renderTeamLi(){   
         this.element.innerHTML = `
         <div data-id="${this.id}" class="team-roster">
         <h3 class="tname">${this.name}</h3>

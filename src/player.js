@@ -3,9 +3,10 @@ class Player {
     static all = [];
     static playerList = document.getElementById("player-list")
 
-    constructor({id, description, name, position, team_id}){
+    constructor({id, description, name, position, team_id, squad}){
         this.id = id;
         this.description = description;
+        this.squad = squad;
         this.name = name;
         this.position = position;
         this.team_id = team_id; 
@@ -17,11 +18,12 @@ class Player {
     }
 
     renderPlayerLi(){ 
+        
         const teamId = this.team_id;
         const pickTeam = Team.all.find(function(t) {return t.id == teamId});
         this.element.innerHTML = `
         <div data-id="${this.id}">
-        <h3 class="pname-position">Pick ${this.id} made by : ${this.name}
+        <h3 class="pname-position">Pick ${this.id} made by ${this.squad.name}: ${this.name}
         <button class="delete-player" data-id=${this.id}>Delete Player</button></h3>
         </div>
         `
