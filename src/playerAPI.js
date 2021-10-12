@@ -38,7 +38,11 @@ class PlayerApi {
             body: JSON.stringify(playerInfo)
         }
         fetch(this.urlPort + `/players`, configObject)
-        .then(r => r.json())
+        .then(r => {
+            if (!r.ok) {
+                throw Error('HTTP Error/Could not create player')
+            } else {
+            return r.json()}})
         .then(data => {
             const newPlayer = new Player(data);
             newPlayer.addPlayerToDom();
@@ -48,6 +52,7 @@ class PlayerApi {
             rosterLi.innerText = `${newPlayer.name} - ${newPlayer.position}: ${newPlayer.description}`;
             TeamLi.children[0].children[1].appendChild(rosterLi);
         })
+        .catch(error => console.log(error.message))
     }
 
     deletePlayer(event){

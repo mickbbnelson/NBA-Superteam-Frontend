@@ -36,7 +36,11 @@ class TeamApi {
             body: JSON.stringify(teamInfo)
         }
         fetch(this.urlPort + `/teams`, configObject)
-        .then(r => r.json())
+        .then(r => {
+            if (!r.ok) {
+                throw Error('HTTP Error/Could not create team')
+            } else {
+            return r.json()}})
         .then(data => {
             const newTeam = new Team(data);
             newTeam.addTeamToDom();
@@ -46,6 +50,7 @@ class TeamApi {
             newOption.innerText = newTeam.name;
             teamDropdown.appendChild(newOption);
         })
+        .catch(error => console.log(error.message)) 
     }
 
     deleteTeam(event){
