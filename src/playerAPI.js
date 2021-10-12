@@ -5,7 +5,11 @@ class PlayerApi {
 
     getPlayers(){
         fetch(this.urlPort + `/players`)
-        .then(r => r.json())
+        .then(r => {
+            if (!r.ok) {
+                throw Error('HTTP Error/Could not fetch data resource')
+            } else {
+            return r.json()}})
         .then(data => {
             const playersData = data.data;
             for(const player of playersData){
@@ -13,7 +17,7 @@ class PlayerApi {
             newPlayer.addPlayerToDom();
         }
     })
-    .catch(error => console.log('Error'))
+    .catch(error => console.log(error.message))
     }
 
     createPlayer(){
