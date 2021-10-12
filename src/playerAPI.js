@@ -10,7 +10,7 @@ class PlayerApi {
             const playersData = data.data;
             for(const player of playersData){
             let newPlayer = new Player({id: player.id, ...player.attributes})
-            newPlayer.addPlayerToDom()
+            newPlayer.addPlayerToDom();
         }
     })
     .catch(error => console.log('Error'))
@@ -36,22 +36,22 @@ class PlayerApi {
         fetch(this.urlPort + `/players`, configObject)
         .then(r => r.json())
         .then(data => {
-            const newPlayer = new Player(data)
-            newPlayer.addPlayerToDom()
-            const TeamLi = document.getElementById(`team-${newPlayer.team_id}`)
-            const rosterLi = document.createElement('li')
-            rosterLi.id = `roster-${newPlayer.id}`
-            rosterLi.innerText = `${newPlayer.name} - ${newPlayer.position}: ${newPlayer.description}`
-            TeamLi.children[0].children[1].appendChild(rosterLi)
+            const newPlayer = new Player(data);
+            newPlayer.addPlayerToDom();
+            const TeamLi = document.getElementById(`team-${newPlayer.team_id}`);
+            const rosterLi = document.createElement('li');
+            rosterLi.id = `roster-${newPlayer.id}`;
+            rosterLi.innerText = `${newPlayer.name} - ${newPlayer.position}: ${newPlayer.description}`;
+            TeamLi.children[0].children[1].appendChild(rosterLi);
         })
     }
 
     deletePlayer(event){
-        const id = event.target.dataset.id
-        event.target.parentElement.parentElement.parentElement.remove()
-        const rosterLi = document.getElementById(`roster-${id}`)
-        rosterLi.remove()
-        const configObject = {method: 'DELETE'}
+        const id = event.target.dataset.id;
+        event.target.parentElement.parentElement.parentElement.remove();
+        const rosterLi = document.getElementById(`roster-${id}`);
+        rosterLi.remove();
+        const configObject = {method: 'DELETE'};
         fetch(this.urlPort + `/players/${id}`, configObject)
         .then(r => r.json())
         .then(data => alert(data.message))

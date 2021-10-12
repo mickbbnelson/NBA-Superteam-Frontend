@@ -13,8 +13,8 @@ class Team {
         }
         this.element = document.createElement('li');
         this.element.dataset['id'] = id;        
-        this.element.id = `team-${id}`
-        this.element.addEventListener('click', this.handleTeamClick)
+        this.element.id = `team-${id}`;
+        this.element.addEventListener('click', this.handleTeamClick);
         Team.all.push(this)
     }
     
@@ -29,12 +29,12 @@ class Team {
         `
         const ul = this.element.querySelector(".troster")
         this.roster.forEach(player => {
-            const li = document.createElement("li")
-            li.id = `roster-${player.id}`
-            li.innerHTML =`${player.name} - ${player.position}: ${player.description}`
-            ul.appendChild(li)
+            const li = document.createElement("li");
+            li.id = `roster-${player.id}`;
+            li.innerHTML =`${player.name} - ${player.position}: ${player.description}`;
+            ul.appendChild(li);
         })
-        return this.element
+        return this.element;
     }
 
     addTeamToDom(){
@@ -43,7 +43,7 @@ class Team {
 
     addTeamsToDropdown(){
         const option = document.createElement('option');
-        option.id = `option-${this.id}`
+        option.id = `option-${this.id}`;
         option.value = this.id;
         option.innerText = this.name;
         teamDropdown.appendChild(option);
