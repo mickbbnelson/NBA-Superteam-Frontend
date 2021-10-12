@@ -12,7 +12,7 @@ class Player {
         this.element = document.createElement('li');
         this.element.dataset['id'] = id;        
         this.element.id = `player-${id}`
-        this.element.addEventListener('click', this.handlePlayerClick)
+        this.element.addEventListener('click', this.handlePlayerClick);
         Player.all.push(this)
     }
 
