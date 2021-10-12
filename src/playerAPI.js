@@ -5,11 +5,7 @@ class PlayerApi {
 
     getPlayers(){
         fetch(this.urlPort + `/players`)
-        .then(r => {
-            if (!r.ok) {
-                throw Error('HTTP Error/Could not fetch data resource')
-            } else {
-            return r.json()}})
+        .then(r => this.renderJSON(r))
         .then(data => {
             const playersData = data.data;
             for(const player of playersData){
@@ -38,11 +34,7 @@ class PlayerApi {
             body: JSON.stringify(playerInfo)
         }
         fetch(this.urlPort + `/players`, configObject)
-        .then(r => {
-            if (!r.ok) {
-                throw Error('HTTP Error/Could not create player')
-            } else {
-            return r.json()}})
+        .then(r => this.renderJSON(r))
         .then(data => {
             const newPlayer = new Player(data);
             newPlayer.addPlayerToDom();
@@ -62,12 +54,15 @@ class PlayerApi {
         rosterLi.remove();
         const configObject = {method: 'DELETE'};
         fetch(this.urlPort + `/players/${id}`, configObject)
-        .then(r => {
-            if (!r.ok) {
-                throw Error('HTTP Error/Could not delete player')
-            } else {
-            return r.json()}})
+        .then(r => this.renderJSON(r))
         .then(data => alert(data.message))
         .catch(error => console.log(error.message))
+    }
+
+    renderJSON(r) {
+        if (!r.ok) {
+            throw Error('HTTP Error/Could not process')
+        } else {
+        return r.json()}
     }
 }

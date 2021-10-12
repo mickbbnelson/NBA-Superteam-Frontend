@@ -5,11 +5,7 @@ class TeamApi {
 
     getTeams(){
         fetch(this.urlPort + `/teams`)
-        .then(r => {
-            if (!r.ok) {
-                throw Error('HTTP Error/Could not fetch data resource')
-            } else {
-            return r.json()}})
+        .then(r => this.renderJSON(r))
         .then(data => {
             const teamsData = data.data;
             for(const team of teamsData){
@@ -65,12 +61,15 @@ class TeamApi {
         event.target.parentElement.parentElement.remove();
         const configObject = {method: 'DELETE'};
         fetch(this.urlPort + `/teamss/${id}`, configObject)
-        .then(r => {
-            if (!r.ok) {
-                throw Error('HTTP Error/Could not delete team')
-            } else {
-            return r.json()}})
+        .then(r => this.renderJSON(r))
         .then(data => alert(data.message))
         .catch(error => console.log(error.message))
+    }
+
+    renderJSON(r) {
+        if (!r.ok) {
+            throw Error('HTTP Error/Could not process')
+        } else {
+        return r.json()}
     }
 }

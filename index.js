@@ -24,7 +24,7 @@ function handleTeamSubmit(event){
 playerForm.addEventListener('submit', handlePlayerSubmit)
 
 function handlePlayerSubmit(event){
-    event.preventDefault()
-    playerApiCall.createPlayer()
-    playerForm.reset()
+    event.preventDefault();
+    playerApiCall.createPlayer();
+    playerForm.reset();
 }
