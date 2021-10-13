@@ -14,7 +14,10 @@ class TeamApi {
                 newTeam.addTeamToDom();
             }
         })
-        .catch(error => console.log(error.message))
+        .catch(error => {
+            console.log(error.message)
+            alert("Could not load teams")
+        })
     }
 
     createTeam(){
@@ -42,19 +45,13 @@ class TeamApi {
             newOption.innerText = newTeam.name;
             teamDropdown.appendChild(newOption);
         })
-        .catch(error => console.log(error.message)) 
+        .catch(error => {
+            console.log(error.message)
+            alert("Could not create team")
+        }) 
     }
 
     deleteTeam(event){
-        //const id = event.target.dataset.id;
-        //const optionRemove = document.getElementById(`option-${id}`);
-        //optionRemove.remove();
-        //Player.all.map(function(player) {
-        //    if (player.team_id == id) {
-        //        const liRemove = document.getElementById(`player-${player.id}`)
-        //        liRemove.remove()
-        //    }})
-        //event.target.parentElement.parentElement.remove();
         const id = event.target.dataset.id;
         const optionRemove = document.getElementById(`option-${id}`);
         const elementRemove = event.target.parentElement.parentElement
@@ -71,7 +68,10 @@ class TeamApi {
                 liRemove.remove()
             }})
         })
-        .catch(error => console.log(error.message))
+        .catch(error => {
+            console.log(error.message)
+            alert("Could not delete team")
+        })
     }
 
     renderJSON(r) {

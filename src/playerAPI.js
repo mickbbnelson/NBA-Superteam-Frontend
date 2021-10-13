@@ -13,7 +13,10 @@ class PlayerApi {
             newPlayer.addPlayerToDom();
         }
     })
-    .catch(error => console.log(error.message))
+    .catch(error => {
+        console.log(error.message)
+        alert("Could not load players")
+    })
     }
 
     createPlayer(){
@@ -44,7 +47,10 @@ class PlayerApi {
             rosterLi.innerText = `${newPlayer.name} - ${newPlayer.position}: ${newPlayer.description}`;
             TeamLi.children[0].children[1].appendChild(rosterLi);
         })
-        .catch(error => console.log(error.message))
+        .catch(error => {
+            console.log(error.message)
+            alert("Could not create player")
+        })
     }
 
     deletePlayer(event){
@@ -59,7 +65,10 @@ class PlayerApi {
             removeElement.remove();
             rosterLi.remove();
         })
-        .catch(error => console.log(error.message));
+        .catch(error => {
+            console.log(error.message)
+            alert("Could not delete player")
+        })
     }
 
     renderJSON(r) {
