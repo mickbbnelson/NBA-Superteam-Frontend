@@ -20,7 +20,7 @@ class Team {
     
     renderTeamLi(){   
         this.element.innerHTML = `
-        <div data-id="${this.id}" class="team-roster">
+        <div class="team-roster">
         <h3 class="tname">${this.name}</h3>
         <ul class="troster">
         </ul><br>

@@ -36,7 +36,7 @@ class PlayerApi {
         fetch(this.urlPort + `/players`, configObject)
         .then(r => this.renderJSON(r))
         .then(data => {
-            const newPlayer = new Player(data);
+            const newPlayer = new Player({id: data.data.id, ...data.data.attributes});
             newPlayer.addPlayerToDom();
             const TeamLi = document.getElementById(`team-${newPlayer.team_id}`);
             const rosterLi = document.createElement('li');

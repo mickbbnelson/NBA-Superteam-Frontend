@@ -51,12 +51,12 @@ class TeamApi {
         optionRemove.remove();
         Player.all.map(function(player) {
             if (player.team_id == id) {
-                const li = document.getElementById(`player-${player.id}`)
-                li.remove()
+                const liRemove = document.getElementById(`player-${player.id}`)
+                liRemove.remove()
             }})
         event.target.parentElement.parentElement.remove();
         const configObject = {method: 'DELETE'};
-        fetch(this.urlPort + `/teamss/${id}`, configObject)
+        fetch(this.urlPort + `/teams/${id}`, configObject)
         .then(r => this.renderJSON(r))
         .then(data => alert(data.message))
         .catch(error => console.log(error.message))

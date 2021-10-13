@@ -18,9 +18,6 @@ class Player {
     }
 
     renderPlayerLi(){ 
-        
-        const teamId = this.team_id;
-        const pickTeam = Team.all.find(function(t) {return t.id == teamId});
         this.element.innerHTML = `
         <div data-id="${this.id}">
         <h3 class="pname-position">Pick ${this.id} made by ${this.squad.name}: ${this.name}
