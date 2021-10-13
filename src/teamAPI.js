@@ -46,19 +46,31 @@ class TeamApi {
     }
 
     deleteTeam(event){
+        //const id = event.target.dataset.id;
+        //const optionRemove = document.getElementById(`option-${id}`);
+        //optionRemove.remove();
+        //Player.all.map(function(player) {
+        //    if (player.team_id == id) {
+        //        const liRemove = document.getElementById(`player-${player.id}`)
+        //        liRemove.remove()
+        //    }})
+        //event.target.parentElement.parentElement.remove();
         const id = event.target.dataset.id;
         const optionRemove = document.getElementById(`option-${id}`);
-        optionRemove.remove();
-        Player.all.map(function(player) {
+        const elementRemove = event.target.parentElement.parentElement
+        const configObject = {method: 'DELETE'};
+        fetch(this.urlPort + `/teams/${id}`, configObject)
+        .then(r => this.renderJSON(r))
+        .then(data => {
+            alert(data.message);
+            optionRemove.remove();
+            elementRemove.remove();
+            Player.all.map(function(player) {
             if (player.team_id == id) {
                 const liRemove = document.getElementById(`player-${player.id}`)
                 liRemove.remove()
             }})
-        event.target.parentElement.parentElement.remove();
-        const configObject = {method: 'DELETE'};
-        fetch(this.urlPort + `/teams/${id}`, configObject)
-        .then(r => this.renderJSON(r))
-        .then(data => alert(data.message))
+        })
         .catch(error => console.log(error.message))
     }
 

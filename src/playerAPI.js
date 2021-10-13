@@ -48,10 +48,6 @@ class PlayerApi {
     }
 
     deletePlayer(event){
-        //const id = event.target.dataset.id;
-        //event.target.parentElement.parentElement.parentElement.remove();
-        //const rosterLi = document.getElementById(`roster-${id}`);
-        //rosterLi.remove();
         const id = event.target.dataset.id;
         const removeElement = event.target.parentElement.parentElement.parentElement;
         const rosterLi = document.getElementById(`roster-${id}`);
@@ -59,9 +55,9 @@ class PlayerApi {
         fetch(this.urlPort + `/players/${id}`, configObject)
         .then(r => this.renderJSON(r))
         .then(data => {
-            alert(data.message)
-            removeElement.remove()
-            rosterLi.remove()
+            alert(data.message);
+            removeElement.remove();
+            rosterLi.remove();
         })
         .catch(error => console.log(error.message));
     }
