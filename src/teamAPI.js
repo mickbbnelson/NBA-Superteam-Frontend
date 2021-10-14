@@ -16,7 +16,7 @@ class TeamApi {
         })
         .catch(error => {
             console.log(error.message)
-            alert("Could not load teams")
+            alert('Could not load teams')
         })
     }
 
