@@ -12,8 +12,6 @@ Running the Application:
 
 -In the frontend directory type "open index.html" to open the application in the browser
 
--To start a new draft, exit out of the server in the backend and run rails "db:reset".  Then rerun the server by typing "rails s"
-
 Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/mickbbnelson/NBA-Superteam-Frontend. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
 
