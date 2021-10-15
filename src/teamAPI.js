@@ -65,7 +65,7 @@ class TeamApi {
             Player.all.map(function(player) {
             if (player.team_id == id) {
                 const liRemove = document.getElementById(`player-${player.id}`)
-                liRemove.remove()
+                if (liRemove) {liRemove.remove()}
             }})
         })
         .catch(error => {
