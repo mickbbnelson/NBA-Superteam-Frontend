@@ -40,6 +40,8 @@ class PlayerApi {
         .then(r => this.renderJSON(r))
         .then(data => {
             const newPlayer = new Player({id: data.data.id, ...data.data.attributes});
+            const newTeam = Team.all.find(t => t.id == newPlayer.team_id)
+            newTeam.roster.push(newPlayer)
             newPlayer.addPlayerToDom();
             const TeamLi = document.getElementById(`team-${newPlayer.team_id}`);
             const rosterLi = document.createElement('li');
