@@ -54,7 +54,4 @@ class Team {
             teamApiCall.deleteTeam(event) 
         }
     }
-
-
-
 }
