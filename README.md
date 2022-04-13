@@ -14,7 +14,7 @@ In order to install correctly, you must install the backend first please follow 
 
 ## Features:
 
--Create teams for each participant and draft NBA legends to each t:
+-Create teams for each participant and draft NBA legends to each team:
 
 ![Team View Image](https://i.postimg.cc/3JGC0Tnj/NBA-Superteam-Image.jpg)
 

@@ -1,4 +1,4 @@
-const urlPort = `http://localhost:3000`;
+const urlPort = `https://nba-superteam-backend.herokuapp.com`;
 const playerApiCall = new PlayerApi(urlPort);
 const teamApiCall = new TeamApi(urlPort);
 const teamForm = document.getElementById("team-form");
